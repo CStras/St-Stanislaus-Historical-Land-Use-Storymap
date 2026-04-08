@@ -8,7 +8,7 @@ Supports images, audio and video embeddings, and Leaflet TileLayer/geojson overl
 
 ## Live links 
 - Leaflet Map [https://handsondataviz.github.io/leaflet-storymaps-with-google-sheets/](https://cstras.github.io/St-Stanislaus-Historical-Land-Use-Storymap/#1)
-- Google Sheets template https://docs.google.com/spreadsheets/d/1-RXxc_pMTZiK9e9b6m8zYxjYEWqqPrWTT-9GK0tThNg/edit?gid=0#gid=0
+- Google Sheets template https://docs.google.com/spreadsheets/d/1zt4tqPEKvlwSeBTzoEP_fWkaYdhiYIwi9H60u1b0bTM/edit?gid=0#gid=0
 
 ## Create Your Own
 - See step-by-step tutorial in *Hands-On Data Visualization* https://HandsOnDataViz.org/leaflet-storymaps-with-google-sheets.html
