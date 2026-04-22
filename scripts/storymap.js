@@ -4,16 +4,6 @@ $(window).on("load", function () {
   // Some constants, such as default settings
   const CHAPTER_ZOOM = 15;
 
-  $.postJSON = function (url, data, success) {
-    return $.ajax({
-      url: url,
-      type: "POST",
-      contentType: "application/json",
-      data: JSON.stringify(data),
-      success: success,
-    });
-  };
-
   // First, try reading Options.csv
   $.get("csv/Options.csv", function (options) {
     $.get("csv/Chapters.csv", function (chapters) {
@@ -35,12 +25,17 @@ $(window).on("load", function () {
         var spreadsheetId = googleDocURL.split("/d/")[1].split("/")[0];
 
         $.when(
-          $.postJSON(
-            apiUrl + spreadsheetId + "/values/Options?key=" + googleApiKey,
-          ),
-          $.postJSON(
-            apiUrl + spreadsheetId + "/values/Chapters?key=" + googleApiKey,
-          ),
+          $.ajax({
+            url: apiUrl + spreadsheetId + "/values/Options?key=" + googleApiKey,
+            method: "GET",
+            dataType: "json",
+          }),
+          $.ajax({
+            url:
+              apiUrl + spreadsheetId + "/values/Chapters?key=" + googleApiKey,
+            method: "GET",
+            dataType: "json",
+          }),
         ).then(function (options, chapters) {
           initMap(parse(options), parse(chapters));
         });
